@@ -50,7 +50,7 @@ def get_filename_without_extension(file_path):
     return os.path.splitext(os.path.basename(file_path))[0]
 
 
-def main(path_to_rtf_files, results_folder, ):
+def main(path_to_rtf_files, results_folder, files_with_error_folder):
 
     files = get_files_in_folder(path_to_rtf_files)
     files_not_processed = []
@@ -60,7 +60,7 @@ def main(path_to_rtf_files, results_folder, ):
         if transform_file != None:
             files_not_processed.append(file)
 
-    save_list_to_txt(files_not_processed, r'C:\Users\Andres.DESKTOP-D77KM25\OneDrive - Stanford\Laboral\Lawgorithm\decisiones_digesto_educacion\files_not_processed.txt')
+    save_list_to_txt(files_not_processed, fr'{files_with_error_folder}\files_not_processed.txt')
 
 
 
